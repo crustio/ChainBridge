@@ -4,7 +4,7 @@
 package utils
 
 import (
-	"github.com/crustio/ChainBridge/bindings/CentrifugeAsset"
+	"github.com/MyronFanQiu/ChainBridge/bindings/CentrifugeAsset"
 	"github.com/ethereum/go-ethereum/common"
 )
 

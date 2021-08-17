@@ -6,8 +6,8 @@ package utils
 import (
 	"math/big"
 
-	"github.com/crustio/ChainBridge/bindings/Bridge"
-	"github.com/crustio/chainbridge-utils/msg"
+	"github.com/MyronFanQiu/ChainBridge/bindings/Bridge"
+	"github.com/MyronFanQiu/chainbridge-utils/msg"
 	"github.com/ethereum/go-ethereum/common"
 )
 

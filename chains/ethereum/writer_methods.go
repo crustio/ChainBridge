@@ -9,8 +9,8 @@ import (
 	"math/big"
 	"time"
 
-	utils "github.com/crustio/ChainBridge/shared/ethereum"
-	"github.com/crustio/chainbridge-utils/msg"
+	utils "github.com/MyronFanQiu/ChainBridge/shared/ethereum"
+	"github.com/MyronFanQiu/chainbridge-utils/msg"
 	log "github.com/ChainSafe/log15"
 )
 

@@ -7,13 +7,13 @@ import (
 	"context"
 	"math/big"
 
-	"github.com/crustio/ChainBridge/bindings/GenericHandler"
+	"github.com/MyronFanQiu/ChainBridge/bindings/GenericHandler"
 	"github.com/ethereum/go-ethereum/common"
 
-	bridge "github.com/crustio/ChainBridge/bindings/Bridge"
-	erc20Handler "github.com/crustio/ChainBridge/bindings/ERC20Handler"
-	erc721Handler "github.com/crustio/ChainBridge/bindings/ERC721Handler"
-	"github.com/crustio/chainbridge-utils/keystore"
+	bridge "github.com/MyronFanQiu/ChainBridge/bindings/Bridge"
+	erc20Handler "github.com/MyronFanQiu/ChainBridge/bindings/ERC20Handler"
+	erc721Handler "github.com/MyronFanQiu/ChainBridge/bindings/ERC721Handler"
+	"github.com/MyronFanQiu/chainbridge-utils/keystore"
 )
 
 var (

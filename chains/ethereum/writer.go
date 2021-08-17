@@ -4,10 +4,10 @@
 package ethereum
 
 import (
-	"github.com/crustio/ChainBridge/bindings/Bridge"
-	"github.com/crustio/chainbridge-utils/core"
-	metrics "github.com/crustio/chainbridge-utils/metrics/types"
-	"github.com/crustio/chainbridge-utils/msg"
+	"github.com/MyronFanQiu/ChainBridge/bindings/Bridge"
+	"github.com/MyronFanQiu/chainbridge-utils/core"
+	metrics "github.com/MyronFanQiu/chainbridge-utils/metrics/types"
+	"github.com/MyronFanQiu/chainbridge-utils/msg"
 	"github.com/ChainSafe/log15"
 )
 

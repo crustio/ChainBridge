@@ -4,7 +4,7 @@
 package ethereum
 
 import (
-	"github.com/crustio/chainbridge-utils/msg"
+	"github.com/MyronFanQiu/chainbridge-utils/msg"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 )
 

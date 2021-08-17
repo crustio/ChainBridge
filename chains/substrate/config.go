@@ -6,7 +6,7 @@ package substrate
 import (
 	"strconv"
 
-	"github.com/crustio/chainbridge-utils/core"
+	"github.com/MyronFanQiu/chainbridge-utils/core"
 )
 
 func parseStartBlock(cfg *core.ChainConfig) uint64 {

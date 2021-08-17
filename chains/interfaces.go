@@ -4,7 +4,7 @@
 package chains
 
 import (
-	"github.com/crustio/chainbridge-utils/msg"
+	"github.com/MyronFanQiu/chainbridge-utils/msg"
 )
 
 type Router interface {

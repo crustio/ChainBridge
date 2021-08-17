@@ -6,8 +6,8 @@ package utils
 import (
 	"math/big"
 
-	"github.com/crustio/ChainBridge/bindings/ERC721Handler"
-	"github.com/crustio/ChainBridge/bindings/ERC721MinterBurnerPauser"
+	"github.com/MyronFanQiu/ChainBridge/bindings/ERC721Handler"
+	"github.com/MyronFanQiu/ChainBridge/bindings/ERC721MinterBurnerPauser"
 	"github.com/ethereum/go-ethereum/common"
 )
 

@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	utils "github.com/crustio/ChainBridge/shared/substrate"
-	"github.com/crustio/chainbridge-utils/core"
-	"github.com/crustio/chainbridge-utils/keystore"
-	"github.com/crustio/chainbridge-utils/msg"
+	utils "github.com/MyronFanQiu/ChainBridge/shared/substrate"
+	"github.com/MyronFanQiu/chainbridge-utils/core"
+	"github.com/MyronFanQiu/chainbridge-utils/keystore"
+	"github.com/MyronFanQiu/chainbridge-utils/msg"
 	"github.com/ChainSafe/log15"
-	"github.com/centrifuge/go-substrate-rpc-client/types"
+	"github.com/MyronFanQiu/go-substrate-rpc-client/v3/types"
 )
 
 const TestSubEndpoint = "ws://localhost:9944"

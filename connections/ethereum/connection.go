@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crustio/ChainBridge/connections/ethereum/egs"
-	"github.com/crustio/chainbridge-utils/crypto/secp256k1"
+	"github.com/MyronFanQiu/ChainBridge/connections/ethereum/egs"
+	"github.com/MyronFanQiu/chainbridge-utils/crypto/secp256k1"
 	"github.com/ChainSafe/log15"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	ethcommon "github.com/ethereum/go-ethereum/common"
