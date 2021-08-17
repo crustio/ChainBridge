@@ -1,10 +1,10 @@
-module github.com/ChainSafe/ChainBridge
+module github.com/crustio/ChainBridge
 
 go 1.15
 
 require (
-	github.com/ChainSafe/chainbridge-substrate-events v0.0.0-20200715141113-87198532025e
-	github.com/ChainSafe/chainbridge-utils v1.0.6
+	github.com/crustio/chainbridge-substrate-events v0.0.0-20200715141113-87198532025e
+	github.com/crustio/chainbridge-utils v1.0.6
 	github.com/ChainSafe/log15 v1.0.0
 	github.com/centrifuge/go-substrate-rpc-client v2.0.0+incompatible
 	github.com/deckarep/golang-set v1.7.1 // indirect

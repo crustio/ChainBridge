@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"sync"
 
-	utils "github.com/ChainSafe/ChainBridge/shared/substrate"
-	"github.com/ChainSafe/chainbridge-utils/msg"
+	utils "github.com/crustio/ChainBridge/shared/substrate"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ChainSafe/log15"
 	gsrpc "github.com/centrifuge/go-substrate-rpc-client"
 	"github.com/centrifuge/go-substrate-rpc-client/rpc/author"
@@ -60,6 +60,9 @@ func (c *Connection) Connect() error {
 	if err != nil {
 		return err
 	}
+	opts := types.SerDeOptions{NoPalletIndices: true}
+	types.SetSerDeOptions(opts)
+
 	c.api = api
 
 	// Fetch metadata
