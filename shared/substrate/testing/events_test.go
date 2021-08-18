@@ -9,7 +9,7 @@ import (
 
 	"github.com/MyronFanQiu/ChainBridge/e2e/substrate"
 	utils "github.com/MyronFanQiu/ChainBridge/shared/substrate"
-	gsrpc "github.com/MyronFanQiu/go-substrate-rpc-client"
+	gsrpc "github.com/MyronFanQiu/go-substrate-rpc-client/v3"
 	"github.com/MyronFanQiu/go-substrate-rpc-client/v3/types"
 )
 

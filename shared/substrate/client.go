@@ -9,7 +9,7 @@ import (
 
 	"github.com/MyronFanQiu/chainbridge-utils/msg"
 	"github.com/ChainSafe/log15"
-	gsrpc "github.com/MyronFanQiu/go-substrate-rpc-client"
+	gsrpc "github.com/MyronFanQiu/go-substrate-rpc-client/v3"
 	"github.com/MyronFanQiu/go-substrate-rpc-client/v3/signature"
 	"github.com/MyronFanQiu/go-substrate-rpc-client/v3/types"
 )
