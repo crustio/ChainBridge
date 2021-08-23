@@ -6,7 +6,7 @@ package ethereum
 import (
 	"math/big"
 
-	"github.com/MyronFanQiu/chainbridge-utils/msg"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 )
 

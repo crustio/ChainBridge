@@ -4,8 +4,8 @@
 package utils
 
 import (
-	"github.com/MyronFanQiu/ChainBridge/bindings/GenericHandler"
-	"github.com/MyronFanQiu/chainbridge-utils/msg"
+	"github.com/crustio/ChainBridge/bindings/GenericHandler"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ethereum/go-ethereum/common"
 )
 

@@ -7,8 +7,8 @@ import (
 	"bytes"
 	"testing"
 
-	utils "github.com/MyronFanQiu/ChainBridge/shared/ethereum"
-	"github.com/MyronFanQiu/chainbridge-utils/msg"
+	utils "github.com/crustio/ChainBridge/shared/ethereum"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ChainSafe/log15"
 	"github.com/ethereum/go-ethereum/common"
 )

@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"testing"
 
-	utils "github.com/MyronFanQiu/ChainBridge/shared/substrate"
-	"github.com/MyronFanQiu/chainbridge-utils/msg"
-	"github.com/MyronFanQiu/go-substrate-rpc-client/v3/types"
+	utils "github.com/crustio/ChainBridge/shared/substrate"
+	"github.com/crustio/chainbridge-utils/msg"
+	"github.com/crustio/go-substrate-rpc-client/v3/types"
 )
 
 // WARNING: THIS METHOD IS UNSAFE AND MAY PANIC

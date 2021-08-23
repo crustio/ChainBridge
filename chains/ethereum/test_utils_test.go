@@ -9,11 +9,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/MyronFanQiu/ChainBridge/bindings/Bridge"
-	connection "github.com/MyronFanQiu/ChainBridge/connections/ethereum"
-	utils "github.com/MyronFanQiu/ChainBridge/shared/ethereum"
-	"github.com/MyronFanQiu/chainbridge-utils/keystore"
-	"github.com/MyronFanQiu/chainbridge-utils/msg"
+	"github.com/crustio/ChainBridge/bindings/Bridge"
+	connection "github.com/crustio/ChainBridge/connections/ethereum"
+	utils "github.com/crustio/ChainBridge/shared/ethereum"
+	"github.com/crustio/chainbridge-utils/keystore"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ChainSafe/log15"
 	"github.com/ethereum/go-ethereum/common"
 )

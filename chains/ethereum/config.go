@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/MyronFanQiu/ChainBridge/connections/ethereum/egs"
-	utils "github.com/MyronFanQiu/ChainBridge/shared/ethereum"
-	"github.com/MyronFanQiu/chainbridge-utils/core"
-	"github.com/MyronFanQiu/chainbridge-utils/msg"
+	"github.com/crustio/ChainBridge/connections/ethereum/egs"
+	utils "github.com/crustio/ChainBridge/shared/ethereum"
+	"github.com/crustio/chainbridge-utils/core"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ethereum/go-ethereum/common"
 )
 

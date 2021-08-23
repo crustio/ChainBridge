@@ -3,7 +3,7 @@
 /*
 Provides the command-line interface for the chainbridge application.
 
-For configuration and CLI commands see the README: https://github.com/MyronFanQiu/ChainBridge.
+For configuration and CLI commands see the README: https://github.com/crustio/ChainBridge.
 */
 package main
 
@@ -15,13 +15,13 @@ import (
 
 	"strconv"
 
-	"github.com/MyronFanQiu/ChainBridge/chains/ethereum"
-	"github.com/MyronFanQiu/ChainBridge/chains/substrate"
-	"github.com/MyronFanQiu/ChainBridge/config"
-	"github.com/MyronFanQiu/chainbridge-utils/core"
-	"github.com/MyronFanQiu/chainbridge-utils/metrics/health"
-	metrics "github.com/MyronFanQiu/chainbridge-utils/metrics/types"
-	"github.com/MyronFanQiu/chainbridge-utils/msg"
+	"github.com/crustio/ChainBridge/chains/ethereum"
+	"github.com/crustio/ChainBridge/chains/substrate"
+	"github.com/crustio/ChainBridge/config"
+	"github.com/crustio/chainbridge-utils/core"
+	"github.com/crustio/chainbridge-utils/metrics/health"
+	metrics "github.com/crustio/chainbridge-utils/metrics/types"
+	"github.com/crustio/chainbridge-utils/msg"
 	log "github.com/ChainSafe/log15"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/urfave/cli/v2"

@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/MyronFanQiu/chainbridge-utils/msg"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ChainSafe/log15"
-	gsrpc "github.com/MyronFanQiu/go-substrate-rpc-client/v3"
-	"github.com/MyronFanQiu/go-substrate-rpc-client/v3/signature"
-	"github.com/MyronFanQiu/go-substrate-rpc-client/v3/types"
+	gsrpc "github.com/crustio/go-substrate-rpc-client/v3"
+	"github.com/crustio/go-substrate-rpc-client/v3/signature"
+	"github.com/crustio/go-substrate-rpc-client/v3/types"
 )
 
 // Client is a container for all the components required to submit extrinsics

@@ -8,9 +8,9 @@ import (
 	"math/big"
 	"testing"
 
-	ethutils "github.com/MyronFanQiu/ChainBridge/shared/ethereum"
-	ethtest "github.com/MyronFanQiu/ChainBridge/shared/ethereum/testing"
-	"github.com/MyronFanQiu/chainbridge-utils/keystore"
+	ethutils "github.com/crustio/ChainBridge/shared/ethereum"
+	ethtest "github.com/crustio/ChainBridge/shared/ethereum/testing"
+	"github.com/crustio/chainbridge-utils/keystore"
 	"github.com/ChainSafe/log15"
 	ethcmn "github.com/ethereum/go-ethereum/common"
 )

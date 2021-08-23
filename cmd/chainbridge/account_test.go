@@ -15,8 +15,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/MyronFanQiu/chainbridge-utils/crypto"
-	"github.com/MyronFanQiu/chainbridge-utils/keystore"
+	"github.com/crustio/chainbridge-utils/crypto"
+	"github.com/crustio/chainbridge-utils/keystore"
 	"github.com/stretchr/testify/require"
 	"github.com/urfave/cli/v2"
 )
