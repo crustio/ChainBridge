@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"math/big"
 
-	events "github.com/ChainSafe/chainbridge-substrate-events"
-	"github.com/ChainSafe/chainbridge-utils/msg"
+	events "github.com/crustio/chainbridge-substrate-events"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ChainSafe/log15"
 )
 
@@ -41,7 +41,7 @@ func fungibleTransferHandler(evtI interface{}, log log15.Logger) (msg.Message, e
 		0, // Unset
 		msg.ChainId(evt.Destination),
 		msg.Nonce(evt.DepositNonce),
-		evt.Amount.Int,
+		big.NewInt(0).Mul(evt.Amount.Int, big.NewInt(1000000)),
 		resourceId,
 		evt.Recipient,
 	), nil

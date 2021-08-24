@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	ethtest "github.com/ChainSafe/ChainBridge/shared/ethereum/testing"
-	"github.com/ChainSafe/chainbridge-utils/core"
-	"github.com/ChainSafe/chainbridge-utils/keystore"
-	"github.com/ChainSafe/chainbridge-utils/msg"
+	ethtest "github.com/crustio/ChainBridge/shared/ethereum/testing"
+	"github.com/crustio/chainbridge-utils/core"
+	"github.com/crustio/chainbridge-utils/keystore"
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ethereum/go-ethereum/common"
 	ethcrypto "github.com/ethereum/go-ethereum/crypto"
 )

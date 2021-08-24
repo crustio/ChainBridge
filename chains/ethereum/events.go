@@ -4,7 +4,9 @@
 package ethereum
 
 import (
-	"github.com/ChainSafe/chainbridge-utils/msg"
+	"math/big"
+
+	"github.com/crustio/chainbridge-utils/msg"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 )
 
@@ -21,7 +23,7 @@ func (l *listener) handleErc20DepositedEvent(destId msg.ChainId, nonce msg.Nonce
 		l.cfg.id,
 		destId,
 		nonce,
-		record.Amount,
+		new(big.Int).Div(record.Amount, big.NewInt(1000000)),
 		record.ResourceID,
 		record.DestinationRecipientAddress,
 	), nil

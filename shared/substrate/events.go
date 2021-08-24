@@ -4,8 +4,8 @@
 package utils
 
 import (
-	events "github.com/ChainSafe/chainbridge-substrate-events"
-	"github.com/centrifuge/go-substrate-rpc-client/types"
+	events "github.com/crustio/chainbridge-substrate-events"
+	"github.com/crustio/go-substrate-rpc-client/v3/types"
 )
 
 type EventErc721Minted struct {
@@ -172,6 +172,7 @@ type EventRegistryTmp struct {
 type Events struct {
 	types.EventRecords
 	events.Events
+	events.CrustEvents
 	Erc721_Minted                    []EventErc721Minted                   //nolint:stylecheck,golint
 	Erc721_Transferred               []EventErc721Transferred              //nolint:stylecheck,golint
 	Erc721_Burned                    []EventErc721Burned                   //nolint:stylecheck,golint
