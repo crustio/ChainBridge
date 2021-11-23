@@ -102,7 +102,7 @@ func InitializeChain(cfg *core.ChainConfig, logger log15.Logger, sysErr chan<- e
 
 	ue := parseUseExtended(cfg)
 
-	blockConfirmations := parseStartBlock(cfg)
+	blockConfirmations := parseBlockConfirmations(cfg)
 
 	// Setup listener & writer
 	l := NewListener(conn, blockConfirmations, cfg.Name, cfg.Id, startBlock, logger, bs, stop, sysErr, m)
