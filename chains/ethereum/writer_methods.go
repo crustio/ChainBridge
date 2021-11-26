@@ -228,7 +228,7 @@ func (w *writer) watchThenExecute(m msg.Message, data []byte, dataHash [32]byte,
 				if m.Source == msg.ChainId(sourceId) &&
 					m.DepositNonce.Big().Uint64() == depositNonce &&
 					utils.IsFinalized(uint8(status)) {
-						if w.proposalIsComplete(m.Source, m.DepositNonce, dataHash) {
+						if w.proposalIsFinalized(m.Source, m.DepositNonce, dataHash) {
 							w.log.Trace("Already passed", "src", sourceId, "nonce", depositNonce)
 						} else {
 							w.executeProposal(m, data, dataHash)
