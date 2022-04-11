@@ -31,13 +31,14 @@ type listener struct {
 	sysErr        chan<- error
 	latestBlock   metrics.LatestBlock
 	metrics       *metrics.ChainMetrics
+	blockConfirmations     uint64
 }
 
 // Frequency of polling for a new block
 var BlockRetryInterval = time.Second * 5
 var BlockRetryLimit = 5
 
-func NewListener(conn *Connection, name string, id msg.ChainId, startBlock uint64, log log15.Logger, bs blockstore.Blockstorer, stop <-chan int, sysErr chan<- error, m *metrics.ChainMetrics) *listener {
+func NewListener(conn *Connection, blockConfirmations uint64, name string, id msg.ChainId, startBlock uint64, log log15.Logger, bs blockstore.Blockstorer, stop <-chan int, sysErr chan<- error, m *metrics.ChainMetrics) *listener {
 	return &listener{
 		name:          name,
 		chainId:       id,
@@ -50,6 +51,7 @@ func NewListener(conn *Connection, name string, id msg.ChainId, startBlock uint6
 		sysErr:        sysErr,
 		latestBlock:   metrics.LatestBlock{LastUpdated: time.Now()},
 		metrics:       m,
+		blockConfirmations: blockConfirmations,
 	}
 }
 
@@ -138,6 +140,13 @@ func (l *listener) pollBlocks() error {
 			// Sleep if the block we want comes after the most recently finalized block
 			if currentBlock > uint64(finalizedHeader.Number) {
 				l.log.Trace("Block not yet finalized", "target", currentBlock, "latest", finalizedHeader.Number)
+				time.Sleep(BlockRetryInterval)
+				continue
+			}
+
+			// Sleep if the difference is less than BlockDelay; (latest - current) < BlockDelay
+			if uint64(finalizedHeader.Number) - currentBlock < l.blockConfirmations {
+				l.log.Debug("Block not ready, will retry", "target", currentBlock, "latest", finalizedHeader.Number, "delay", l.blockConfirmations)
 				time.Sleep(BlockRetryInterval)
 				continue
 			}
