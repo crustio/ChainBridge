@@ -4,7 +4,7 @@ go 1.15
 
 require (
 	github.com/ChainSafe/log15 v1.0.0
-	github.com/crustio/chainbridge-substrate-events v1.5.1
+	github.com/crustio/chainbridge-substrate-events v1.5.2
 	github.com/crustio/chainbridge-utils v1.1.0
 	github.com/crustio/go-substrate-rpc-client/v3 v3.1.0
 	github.com/ethereum/go-ethereum v1.10.6
