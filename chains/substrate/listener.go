@@ -9,29 +9,29 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/ChainSafe/log15"
 	"github.com/crustio/ChainBridge/chains"
 	utils "github.com/crustio/ChainBridge/shared/substrate"
 	"github.com/crustio/chainbridge-utils/blockstore"
 	metrics "github.com/crustio/chainbridge-utils/metrics/types"
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/ChainSafe/log15"
 	"github.com/crustio/go-substrate-rpc-client/v3/types"
 )
 
 type listener struct {
-	name          string
-	chainId       msg.ChainId
-	startBlock    uint64
-	blockstore    blockstore.Blockstorer
-	conn          *Connection
-	subscriptions map[eventName]eventHandler // Handlers for specific events
-	router        chains.Router
-	log           log15.Logger
-	stop          <-chan int
-	sysErr        chan<- error
-	latestBlock   metrics.LatestBlock
-	metrics       *metrics.ChainMetrics
-	blockConfirmations     uint64
+	name               string
+	chainId            msg.ChainId
+	startBlock         uint64
+	blockstore         blockstore.Blockstorer
+	conn               *Connection
+	subscriptions      map[eventName]eventHandler // Handlers for specific events
+	router             chains.Router
+	log                log15.Logger
+	stop               <-chan int
+	sysErr             chan<- error
+	latestBlock        metrics.LatestBlock
+	metrics            *metrics.ChainMetrics
+	blockConfirmations uint64
 }
 
 // Frequency of polling for a new block
@@ -40,17 +40,17 @@ var BlockRetryLimit = 5
 
 func NewListener(conn *Connection, blockConfirmations uint64, name string, id msg.ChainId, startBlock uint64, log log15.Logger, bs blockstore.Blockstorer, stop <-chan int, sysErr chan<- error, m *metrics.ChainMetrics) *listener {
 	return &listener{
-		name:          name,
-		chainId:       id,
-		startBlock:    startBlock,
-		blockstore:    bs,
-		conn:          conn,
-		subscriptions: make(map[eventName]eventHandler),
-		log:           log,
-		stop:          stop,
-		sysErr:        sysErr,
-		latestBlock:   metrics.LatestBlock{LastUpdated: time.Now()},
-		metrics:       m,
+		name:               name,
+		chainId:            id,
+		startBlock:         startBlock,
+		blockstore:         bs,
+		conn:               conn,
+		subscriptions:      make(map[eventName]eventHandler),
+		log:                log,
+		stop:               stop,
+		sysErr:             sysErr,
+		latestBlock:        metrics.LatestBlock{LastUpdated: time.Now()},
+		metrics:            m,
 		blockConfirmations: blockConfirmations,
 	}
 }
@@ -145,7 +145,7 @@ func (l *listener) pollBlocks() error {
 			}
 
 			// Sleep if the difference is less than BlockDelay; (latest - current) < BlockDelay
-			if uint64(finalizedHeader.Number) - currentBlock < l.blockConfirmations {
+			if uint64(finalizedHeader.Number)-currentBlock < l.blockConfirmations {
 				l.log.Debug("Block not ready, will retry", "target", currentBlock, "latest", finalizedHeader.Number, "delay", l.blockConfirmations)
 				time.Sleep(BlockRetryInterval)
 				continue
@@ -210,14 +210,14 @@ func (l *listener) processEvents(hash types.Hash) error {
 		return err
 	}
 
-	l.handleEvents(e)
+	l.handleEvents(e, hash)
 	l.log.Trace("Finished processing events", "block", hash.Hex())
 
 	return nil
 }
 
 // handleEvents calls the associated handler for all registered event types
-func (l *listener) handleEvents(evts utils.Events) {
+func (l *listener) handleEvents(evts utils.Events, hash types.Hash) {
 	if l.subscriptions[FungibleTransfer] != nil {
 		for _, evt := range evts.ChainBridge_FungibleTransfer {
 			l.log.Trace("Handling FungibleTransfer event")
@@ -239,7 +239,7 @@ func (l *listener) handleEvents(evts utils.Events) {
 
 	if len(evts.System_CodeUpdated) > 0 {
 		l.log.Trace("Received CodeUpdated event")
-		err := l.conn.updateMetatdata()
+		err := l.conn.updateMetatdata(hash)
 		if err != nil {
 			l.log.Error("Unable to update Metadata", "error", err)
 		}

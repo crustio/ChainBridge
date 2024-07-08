@@ -7,30 +7,29 @@ The current supported transfer types are Fungible, Nonfungible, and generic.
 
 There are 3 major components: the connection, the listener, and the writer.
 
-Connection
+# Connection
 
 The Connection handles connecting to the substrate client, and submitting transactions to the client.
 It also handles state queries. The connection is shared by the writer and listener.
 
-Listener
+# Listener
 
 The substrate listener polls blocks and parses the associated events for the three transfer types. It then forwards these into the router.
 
-Writer
+# Writer
 
 As the writer receives messages from the router, it constructs proposals. If a proposal is still active, the writer will attempt to vote on it. Resource IDs are resolved to method name on-chain, which are then used in the proposals when constructing the resulting Call struct.
-
 */
 package substrate
 
 import (
+	"github.com/ChainSafe/log15"
 	"github.com/crustio/chainbridge-utils/blockstore"
 	"github.com/crustio/chainbridge-utils/core"
 	"github.com/crustio/chainbridge-utils/crypto/sr25519"
 	"github.com/crustio/chainbridge-utils/keystore"
 	metrics "github.com/crustio/chainbridge-utils/metrics/types"
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/ChainSafe/log15"
 )
 
 var _ core.Chain = &Chain{}
@@ -82,7 +81,7 @@ func InitializeChain(cfg *core.ChainConfig, logger log15.Logger, sysErr chan<- e
 	stop := make(chan int)
 	// Setup connection
 	conn := NewConnection(cfg.Endpoint, cfg.Name, krp, logger, stop, sysErr)
-	err = conn.Connect()
+	err = conn.Connect(startBlock)
 	if err != nil {
 		return nil, err
 	}

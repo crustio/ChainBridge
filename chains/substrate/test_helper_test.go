@@ -7,10 +7,10 @@ import (
 	"os"
 	"testing"
 
+	"github.com/ChainSafe/log15"
 	utils "github.com/crustio/ChainBridge/shared/substrate"
 	"github.com/crustio/chainbridge-utils/keystore"
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/ChainSafe/log15"
 	"github.com/crustio/go-substrate-rpc-client/v3/types"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
@@ -120,7 +120,7 @@ func newTestLogger(name string) log15.Logger {
 func createAliceConnection() (*Connection, chan error, error) {
 	sysErr := make(chan error)
 	alice := NewConnection(TestEndpoint, "Alice", AliceKey, AliceTestLogger, make(chan int), sysErr)
-	err := alice.Connect()
+	err := alice.Connect(0)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -135,7 +135,7 @@ func createAliceAndBobConnections() (*Connection, *Connection, chan error, error
 	}
 
 	bob := NewConnection(TestEndpoint, "Bob", BobKey, AliceTestLogger, make(chan int), sysErr)
-	err = bob.Connect()
+	err = bob.Connect(0)
 	if err != nil {
 		return nil, nil, nil, err
 	}

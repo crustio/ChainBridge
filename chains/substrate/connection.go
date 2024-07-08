@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/ChainSafe/log15"
 	utils "github.com/crustio/ChainBridge/shared/substrate"
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/ChainSafe/log15"
 	gsrpc "github.com/crustio/go-substrate-rpc-client/v3"
 	"github.com/crustio/go-substrate-rpc-client/v3/rpc/author"
 	"github.com/crustio/go-substrate-rpc-client/v3/signature"
@@ -42,9 +42,9 @@ func (c *Connection) getMetadata() (meta types.Metadata) {
 	return meta
 }
 
-func (c *Connection) updateMetatdata() error {
+func (c *Connection) updateMetatdata(hash types.Hash) error {
 	c.metaLock.Lock()
-	meta, err := c.api.RPC.State.GetMetadataLatest()
+	meta, err := c.api.RPC.State.GetMetadata(hash)
 	if err != nil {
 		c.metaLock.Unlock()
 		return err
@@ -54,7 +54,7 @@ func (c *Connection) updateMetatdata() error {
 	return nil
 }
 
-func (c *Connection) Connect() error {
+func (c *Connection) Connect(number uint64) error {
 	c.log.Info("Connecting to substrate chain...", "url", c.url)
 	api, err := gsrpc.NewSubstrateAPI(c.url)
 	if err != nil {
@@ -66,9 +66,21 @@ func (c *Connection) Connect() error {
 	c.api = api
 
 	// Fetch metadata
-	meta, err := api.RPC.State.GetMetadataLatest()
-	if err != nil {
-		return err
+	var meta *types.Metadata
+	if number == 0 {
+		meta, err = api.RPC.State.GetMetadataLatest()
+		if err != nil {
+			return err
+		}
+	} else {
+		hash, err := api.RPC.Chain.GetBlockHash(number)
+		if err != nil {
+			return err
+		}
+		meta, err = api.RPC.State.GetMetadata(hash)
+		if err != nil {
+			return err
+		}
 	}
 	c.meta = *meta
 	c.log.Debug("Fetched substrate metadata")
