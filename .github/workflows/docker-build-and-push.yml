@@ -31,7 +31,7 @@ jobs:
         id: prep
         run: |
           # creates local variable of chainbridge docker image
-          DOCKER_IMAGE=chainsafe/chainbridge
+          DOCKER_IMAGE=crustio/chainbridge
 
           # creates local variable of commit hash that triggered workflow
           COMMIT_HASH=$(echo $GITHUB_SHA | head -c7)
