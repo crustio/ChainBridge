@@ -6,7 +6,7 @@ name: Docker build and push
 on:
   push:
     branches:
-    # when main branch receives a push
+      # when main branch receives a push
       - main
     # when any of these versions receive a push
     tags:
@@ -15,23 +15,24 @@ on:
   release:
     types:
       - created
+  workflow_dispatch:
 # list jobs
 jobs:
   build-and-deploy:
     name: Docker Deployment
     runs-on: ubuntu-latest
     # requires these jobs to run first
-    needs: [test, e2e, lint]
+    #    needs: [test, e2e, lint]
     # if check not passed, job will be skipped
-    if: github.ref == 'refs/heads/main' || contains(github.ref, '/tags/v')
+    # if: github.ref == 'refs/heads/mainnet' || contains(github.ref, '/tags/v')
     # list steps
     steps:
-    # prepares docker images
+      # prepares docker images
       - name: Prepare
         id: prep
         run: |
           # creates local variable of chainbridge docker image
-          DOCKER_IMAGE=chainsafe/chainbridge
+          DOCKER_IMAGE=crustio/chainbridge
 
           # creates local variable of commit hash that triggered workflow
           COMMIT_HASH=$(echo $GITHUB_SHA | head -c7)
