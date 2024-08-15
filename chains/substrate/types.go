@@ -7,8 +7,8 @@ import (
 	"math/big"
 
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/crustio/go-substrate-rpc-client/v3/scale"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/scale"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 )
 
 type voteState struct {

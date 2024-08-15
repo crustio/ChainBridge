@@ -15,7 +15,7 @@ import (
 	"github.com/crustio/chainbridge-utils/blockstore"
 	metrics "github.com/crustio/chainbridge-utils/metrics/types"
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 )
 
 type listener struct {

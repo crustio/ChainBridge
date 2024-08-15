@@ -11,7 +11,7 @@ import (
 	utils "github.com/crustio/ChainBridge/shared/substrate"
 	"github.com/crustio/chainbridge-utils/keystore"
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 

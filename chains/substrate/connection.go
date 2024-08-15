@@ -10,10 +10,10 @@ import (
 	"github.com/ChainSafe/log15"
 	utils "github.com/crustio/ChainBridge/shared/substrate"
 	"github.com/crustio/chainbridge-utils/msg"
-	gsrpc "github.com/crustio/go-substrate-rpc-client/v3"
-	"github.com/crustio/go-substrate-rpc-client/v3/rpc/author"
-	"github.com/crustio/go-substrate-rpc-client/v3/signature"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	gsrpc "github.com/crustio/go-substrate-rpc-client/v4"
+	"github.com/crustio/go-substrate-rpc-client/v4/rpc/author"
+	"github.com/crustio/go-substrate-rpc-client/v4/signature"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 )
 
 type Connection struct {

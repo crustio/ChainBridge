@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 
 	utils "github.com/crustio/ChainBridge/shared/substrate"
 	subtest "github.com/crustio/ChainBridge/shared/substrate/testing"

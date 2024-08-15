@@ -9,15 +9,15 @@ import (
 	"testing"
 	"time"
 
+	log "github.com/ChainSafe/log15"
 	eth "github.com/crustio/ChainBridge/e2e/ethereum"
 	ethutils "github.com/crustio/ChainBridge/shared/ethereum"
 	ethtest "github.com/crustio/ChainBridge/shared/ethereum/testing"
 	subutils "github.com/crustio/ChainBridge/shared/substrate"
 	subtest "github.com/crustio/ChainBridge/shared/substrate/testing"
 	"github.com/crustio/chainbridge-utils/msg"
-	log "github.com/ChainSafe/log15"
-	"github.com/crustio/go-substrate-rpc-client/v3/signature"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/signature"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 	"github.com/ethereum/go-ethereum/common"
 )
 

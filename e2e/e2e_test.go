@@ -11,6 +11,7 @@ import (
 	"strings"
 	"testing"
 
+	log "github.com/ChainSafe/log15"
 	ethChain "github.com/crustio/ChainBridge/chains/ethereum"
 	subChain "github.com/crustio/ChainBridge/chains/substrate"
 	eth "github.com/crustio/ChainBridge/e2e/ethereum"
@@ -22,8 +23,7 @@ import (
 	subtest "github.com/crustio/ChainBridge/shared/substrate/testing"
 	"github.com/crustio/chainbridge-utils/core"
 	"github.com/crustio/chainbridge-utils/msg"
-	log "github.com/ChainSafe/log15"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 	"github.com/ethereum/go-ethereum/common"
 )
 

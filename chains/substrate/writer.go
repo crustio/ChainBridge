@@ -11,11 +11,11 @@ import (
 
 	"github.com/crustio/chainbridge-utils/core"
 
+	"github.com/ChainSafe/log15"
 	utils "github.com/crustio/ChainBridge/shared/substrate"
 	metrics "github.com/crustio/chainbridge-utils/metrics/types"
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/ChainSafe/log15"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 )
 
 var _ core.Writer = &writer{}
