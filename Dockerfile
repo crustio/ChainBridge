@@ -9,7 +9,7 @@ RUN cd cmd/chainbridge && go build -o /bridge .
 
 # # final stage
 FROM debian:buster
-RUN apt-get -y update && apt-get -y upgrade && apt-get install ca-certificates wget -y
+RUN apt-get -y update && apt-get -y upgrade && apt-get install ca-certificates wget expect -y
 RUN wget -P /usr/local/bin/ https://chainbridge.ams3.digitaloceanspaces.com/subkey-rc6 \
   && mv /usr/local/bin/subkey-rc6 /usr/local/bin/subkey \
   && chmod +x /usr/local/bin/subkey
