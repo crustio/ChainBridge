@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 )
 
 func QueryStorage(client *Client, prefix, method string, arg1, arg2 []byte, result interface{}) (bool, error) {

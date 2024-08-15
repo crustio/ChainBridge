@@ -14,7 +14,7 @@ import (
 	subtest "github.com/crustio/ChainBridge/shared/substrate/testing"
 	"github.com/crustio/chainbridge-utils/blockstore"
 	"github.com/crustio/chainbridge-utils/msg"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 )
 
 const ListenerTimeout = time.Second * 30

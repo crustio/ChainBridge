@@ -6,7 +6,7 @@ package substrate
 import (
 	"testing"
 
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 )
 
 func TestConnect_QueryStorage(t *testing.T) {

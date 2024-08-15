@@ -9,8 +9,8 @@ import (
 
 	"github.com/crustio/ChainBridge/e2e/substrate"
 	utils "github.com/crustio/ChainBridge/shared/substrate"
-	gsrpc "github.com/crustio/go-substrate-rpc-client/v3"
-	"github.com/crustio/go-substrate-rpc-client/v3/types"
+	gsrpc "github.com/crustio/go-substrate-rpc-client/v4"
+	"github.com/crustio/go-substrate-rpc-client/v4/types"
 )
 
 func TestChain_Events(t *testing.T) {
